@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, 'Segoe UI', 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c2e0ff 0%, #a0c4ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Main card */
+.weather-card {
+  max-width: 450px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 2rem;
+  box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Header */
+.weather-header {
+  background: linear-gradient(115deg, #1e3c72, #0f2a4f);
+  padding: 1.2rem 1.5rem;
+  color: white;
+}
+
+.weather-header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Body */
+.weather-body {
+  padding: 1.5rem;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#cityInput {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 2rem;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+#cityInput:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+#searchBtn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#searchBtn:hover {
+  background: #2563eb;
+  transform: scale(0.97);
+}
+
+/* Weather info */
+.weather-info {
+  text-align: center;
+  background: #f8faff;
+  border-radius: 1.5rem;
+  padding: 1.2rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s;
+}
+
+.city-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2b48;
+  margin-bottom: 0.5rem;
+}
+
+.temperature {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #3b82f6;
+  margin: 0.5rem 0;
+}
+
+.humidity {
+  font-size: 1rem;
+  color: #475569;
+  margin: 0.5rem 0;
+}
+
+.icon img {
+  width: 80px;
+  height: 80px;
+  margin: 0.5rem 0;
+}
+
+.description {
+  font-size: 1rem;
+  color: #334155;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.error-msg {
+  color: #dc2626;
+  background: #fee2e2;
+  border-radius: 2rem;
+  padding: 0.6rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .weather-header h2 {
+    font-size: 1.3rem;
+  }
+  .weather-body {
+    padding: 1rem;
+  }
+  .city-name {
+    font-size: 1.4rem;
+  }
+  .temperature {
+    font-size: 2rem;
+  }
+}
