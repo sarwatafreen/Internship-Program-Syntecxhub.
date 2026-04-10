@@ -1,0 +1,131 @@
+/* 1. Define colors for Light Mode */
+/* :root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #3498db;
+  --transition-speed: 0.4s;
+}
+
+/* 2. Redefine colors for Dark Mode */
+/* body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f5f5f5;
+  --accent-color: #f1c40f;
+}
+
+/* 3. The Smooth Transition Effect */
+/* body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+/* } */   
+
+/* Define Variables for Light Mode (Default) */
+:root {
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --accent-color: #0984e3;
+  --toggle-bg: #dfe6e9;
+  --transition-speed: 0.4s;
+}
+
+/* Define Variables for Dark Mode */
+[data-theme="dark"] {
+  --bg-color: #1e272e;
+  --card-bg: #2f3640;
+  --text-primary: #f5f6fa;
+  --text-secondary: #dcdde1;
+  --accent-color: #00d2d3;
+  --toggle-bg: #485460;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+  /* Smooth color transition effect */
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 400px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+h1 { color: var(--text-primary); font-size: 1.5rem; }
+p { color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; }
+
+/* Creative Toggle Switch */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+
+.theme-switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--toggle-bg);
+  transition: var(--transition-speed);
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px; width: 24px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: var(--transition-speed);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+input:checked + .slider { background-color: #341f97; }
+input:checked + .slider:before { transform: translateX(28px); }
+
+.icon { font-size: 14px; user-select: none; }
+
+.main-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
